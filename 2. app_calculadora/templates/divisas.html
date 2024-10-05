@@ -1,0 +1,33 @@
+<!--index.html-->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card border-success">
+    <div class="card-header  bg-success text-light text-center ">
+        <h1>Calculadora de Divisas</h1>
+    </div>
+    <div class="card-body py-2">
+        <form action="/divisas" method="POST">
+            <div class="row">
+                <div class="col-md-12 py-2">
+                    <input type="number" class="form-control" name="dolar" placeholder="Ingresa el valor en dólares"
+                        aria-label="Ingresa el valor en dólares">
+                </div>
+
+            </div>
+            <div class="row py-3">
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-success">Calcular</button>
+                </div>
+            </div>
+        </form>
+
+        
+        <div class="row py-2"></div>
+        <div class="col">
+            <h4><img src="{{url_for('static', filename='img/mas.png')}}" alt=""> El resultado es: {{total_pesos_colombianos}}</h4>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
